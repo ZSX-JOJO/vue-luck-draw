@@ -6,15 +6,21 @@ import commonjs from '@rollup/plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import livereload from 'rollup-plugin-livereload'
 import serve from 'rollup-plugin-serve'
-import eslint from '@rollup/plugin-eslint'
+// import eslint from '@rollup/plugin-eslint'
+import { name } from './package.json'
 
 export default {
   input: 'src/index.ts',
   output: [
     {
-      file: `examples/dev.js`,
+      file: `dist/${name}.umd.js`,
       format: 'umd',
       name: 'LuckyCanvas',
+      sourcemap: true,
+    },
+    {
+      file: `dist/${name}.es.js`,
+      format: 'es',
       sourcemap: true,
     },
   ],
@@ -36,8 +42,9 @@ export default {
     livereload(),
     serve({
       open: true,
-      port: 8888,
-      contentBase: './examples'
+      port: 10002,
+      openPage: '/examples/index.html',
+      contentBase: './'
     }),
   ]
 }

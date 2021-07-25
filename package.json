@@ -1,10 +1,10 @@
 {
-  "name": "root",
+  "name": "lucky-canvas",
   "devDependencies": {
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "boot": "lerna bootstrap",
     "dev": "lerna run dev --parallel",
     "build": "lerna run build --sort --stream",
     "update-version": "lerna version --conventional-commits --no-push --no-changelog --no-git-tag-version",
