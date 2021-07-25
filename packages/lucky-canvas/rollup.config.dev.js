@@ -19,6 +19,11 @@ export default {
       sourcemap: true,
     },
     {
+      file: `dist/${name}.cjs.js`,
+      format: 'cjs',
+      sourcemap: true,
+    },
+    {
       file: `dist/${name}.es.js`,
       format: 'es',
       sourcemap: true,
@@ -42,7 +47,7 @@ export default {
     livereload(),
     serve({
       open: true,
-      port: 10002,
+      port: 10008,
       openPage: '/examples/index.html',
       contentBase: './'
     }),

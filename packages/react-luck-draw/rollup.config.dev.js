@@ -22,6 +22,7 @@ export default {
     livereload(),
     serve({
       open: true,
+      port: 10009,
       contentBase: './'
     }),
   ],
